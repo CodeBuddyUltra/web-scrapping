@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
-import random
-import time
+
+
 username = input("What is your lichess username(Note that it is case sensitive): ")
 
 r = requests.get(f"https://lichess.org/@/{username}")
@@ -19,8 +19,9 @@ from threading import Thread
 from time import sleep
 
 if username == "":
-    print("Please put in an username")
-    print("Exiting....")
+    print("Please provide the username")
+    print("Exiting.....")
+
 else:
     class Loader:
         def __init__(self, desc="Loading...", end="Done!", timeout=0.1):
@@ -75,21 +76,73 @@ else:
             sleep(0.25)
         loader.stop()
 
-    print("\n \n \n")
-    print("Ultrabullet rating: " + "" +ratings[0].find_all("strong")[0].text)
-    print("Bullet rating: " + "" + ratings[0].find_all("strong")[1].text)
-    print("Rapid rating: " + "" + ratings[0].find_all("strong")[2].text)
-    print("Classical rating: " + "" + ratings[0].find_all("strong")[3].text)
-    print("Correspondence rating: " + "" + ratings[0].find_all("strong")[4].text)
-    print("Crazyhouse rating: " + "" + ratings[0].find_all("strong")[5].text)
-    print("Chess960 rating: " + "" + ratings[0].find_all("strong")[6].text)
-    print("King of the hill rating: " + "" + ratings[0].find_all("strong")[7].text)
-    print("Three check rating: " + "" + ratings[0].find_all("strong")[8].text)
-    print("Antichess rating: " + "" + ratings[0].find_all("strong")[9].text)
-    print("Atomic rating: " + "" + ratings[0].find_all("strong")[10].text)
-    print("Horde rating: " + "" + ratings[0].find_all("strong")[11].text)
-    print("Racing Kings rating: " + "" + ratings[0].find_all("strong")[12].text)
-    print("Puzzles rating: " + "" + ratings[0].find_all("strong")[13].text)
-    print("Puzzle storm rating: " + "" + ratings[0].find_all("strong")[14].text)
-    print("Puzzle racer rating: " + "" + ratings[0].find_all("strong")[15].text)
-    print("Puzzle streak rating: " + "" + ratings[0].find_all("strong")[16].text)
+
+    try:
+        print("\n \n \n")
+        print("Ultrabullet rating: " + "" +ratings[0].find_all("strong")[0].text)
+    except:
+        print("Ultrabullet ratings : None")
+    try:
+        print("Bullet rating: " + "" + ratings[0].find_all("strong")[1].text)
+    except:
+        print("Bullet rating : None")
+    try:
+        print("Rapid rating: " + "" + ratings[0].find_all("strong")[2].text)
+    except:
+        print("Rapid rating: None")
+    try:
+        print("Classical rating: " + "" + ratings[0].find_all("strong")[3].text)
+    except:
+        print("Classical Rating: None")
+    try:
+        print("Correspondence rating: " + "" + ratings[0].find_all("strong")[4].text)
+    except:
+        print("Classical Rating: None")
+    try:
+        print("Crazyhouse rating: " + "" + ratings[0].find_all("strong")[5].text)
+    except:
+        print("Crazyhouse Rating: None")
+    try:
+        print("Chess960 rating: " + "" + ratings[0].find_all("strong")[6].text)
+    except:
+        print("Chess960 rating: None")
+    try:
+        print("King of the hill rating: " + "" + ratings[0].find_all("strong")[7].text)
+    except:
+        print("King of the hill rating: None")
+    try:
+        print("Three check rating: " + "" + ratings[0].find_all("strong")[8].text)
+    except:
+        print("Three check rating: None")
+    try:
+        print("Antichess rating: " + "" + ratings[0].find_all("strong")[9].text)
+    except:
+        print("Antichess rating: None")
+    try:
+        print("Atomic rating: " + "" + ratings[0].find_all("strong")[10].text)
+    except:
+        print("Atomic rating: None")
+    try:
+        print("Horde rating: " + "" + ratings[0].find_all("strong")[11].text)
+    except:
+        print("Horde rating: None")
+    try:
+        print("Racing Kings rating: " + "" + ratings[0].find_all("strong")[12].text)
+    except:
+        print("Racing Kings rating: None")
+    try:
+        print("Puzzles rating: " + "" + ratings[0].find_all("strong")[13].text)
+    except:
+        print("Puzzle Kings rating: None")
+    try:
+        print("Puzzle storm rating: " + "" + ratings[0].find_all("strong")[14].text)
+    except:
+        print("Puzzles Kings rating: None")
+    try:
+        print("Puzzle racer rating: " + "" + ratings[0].find_all("strong")[15].text)
+    except:
+        print("Puzzle racer rating: None")
+    try:
+        print("Puzzle streak rating: " + "" + ratings[0].find_all("strong")[16].text)
+    except:
+        print("Puzzle streak rating: None")
